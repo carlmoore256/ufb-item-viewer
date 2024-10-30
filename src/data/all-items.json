@@ -1,0 +1,2089 @@
+[
+    {
+        "id": "sword-1",
+        "name": "Sword Level 1",
+        "description": "A versatile melee weapon.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Counter",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Sword Strike",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll",
+                        "range": { "type": "Linear", "distance": 1 }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "sword-2",
+        "name": "Sword Level 2",
+        "prototype": "sword-1",
+        "description": "A better sword.",
+        "behaviors": [
+            {
+                "name": "Fighter Stance",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Counter",
+                        "amount": 2
+                    }
+                ]
+            },
+            {
+                "name": "Charge",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Charge",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Counter",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "sword-3",
+        "name": "Sword Level 3",
+        "prototype": "sword-2",
+        "description": "The best sword.",
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Burn",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Holy Sword",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Energy", "amount": -5 },
+                    { "resource": "Mana", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll"
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Burn",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 1 }
+            }
+        ]
+    },
+    {
+        "id": "ax-1",
+        "name": "Ax Level 1",
+        "description": "A basic ax offering standard melee capabilities.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Steady",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Ax Throw",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll"
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Steady",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 1 }
+            }
+        ]
+    },
+    {
+        "id": "ax-2",
+        "name": "Ax Level 2",
+        "prototype": "ax-1",
+        "description": "An advanced ax with enhanced Debuff and range.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Vampire Ax",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Energy", "amount": -3 },
+                    { "resource": "Mana", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll"
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Vampire",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Harden",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Steady",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ax-3",
+        "name": "Ax Level 3",
+        "prototype": "ax-2",
+        "description": "The ultimate ax with devastating Debuff capabilities.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Tornado Slice",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Melee", "amount": -2 },
+                    { "resource": "Energy", "amount": -8 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 3,
+                        "amountModifier": "Roll"
+                    }
+                ],
+                "range": { "type": "Radius", "distance": 1 }
+            }
+        ]
+    },
+    {
+        "id": "spear-1",
+        "name": "Spear Level 1",
+        "description": "A basic spear offering standard melee capabilities.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Lance",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Energy", "amount": -5 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll"
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Push",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 1 }
+            }
+        ]
+    },
+    {
+        "id": "spear-2",
+        "name": "Spear Level 2",
+        "prototype": "spear-1",
+        "description": "An advanced spear with enhanced Debuff and range.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Ice Lance",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Mana", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 2
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 1 }
+            },
+            {
+                "name": "Harpoon",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Energy", "amount": -4 },
+                    { "resource": "Melee", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 4
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "spear-3",
+        "name": "Spear Level 3",
+        "prototype": "spear-2",
+        "description": "The ultimate spear with devastating Debuff capabilities.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Poison Lance",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Energy", "amount": -6 },
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Mana", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 2,
+                        "amountModifier": "Roll"
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Poison",
+                        "amount": 3
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 1 }
+            }
+        ]
+    },
+    {
+        "id": "shield-1",
+        "name": "Shield Level 1",
+        "description": "A basic shield offering standard defense capabilities.",
+        "category": "Defense",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Block",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Shield Bash",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Melee", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 3
+                    },
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Energy",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 1 }
+            }
+        ]
+    },
+    {
+        "id": "shield-2",
+        "name": "Shield Level 2",
+        "description": "An advanced shield with enhanced defense capabilities.",
+        "prototype": "shield-1",
+        "category": "Defense",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Dodge",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Defensive Stance",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Melee", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Block",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Energy",
+                        "amount": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "shield-3",
+        "name": "Shield Level 3",
+        "description": "The ultimate shield with a perfect mix of defensive and offsensive capabilites.",
+        "prototype": "shield-2",
+        "category": "Defense",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Reflect",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Dodge",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Mirror Shield",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -4 },
+                    { "resource": "Mana", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Reflect",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Battering Ram",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -5 },
+                    { "resource": "Melee", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 5
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Confuse",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "bow-1",
+        "name": "Bow Level 1",
+        "description": "A simple bow suitable for ranged attacks.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Arrow",
+                        "amount": 1,
+                        "isRecurring": true
+                    }
+                ]
+            },
+            {
+                "name": "Shoot Arrow",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 3
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 5 }
+            },
+            {
+                "name": "Shoot Fire Arrow",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Fire Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 2
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Burn",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 5 }
+            },
+            {
+                "name": "Shoot Ice Arrow",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Ice Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 2
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 5 }
+            },
+            {
+                "name": "Shoot Poison Arrow",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Poison Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 2
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Poison",
+                        "amount": 3
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 5 }
+            },
+            {
+                "name": "Shoot Bomb Arrow",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Bomb Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 6
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Push",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 5 }
+            }
+        ]
+    },
+    {
+        "id": "bow-2",
+        "name": "Bow Level 2",
+        "description": "An enhanced bow that allows the use of crafted arrows.",
+        "prototype": "bow-1",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Arrow",
+                        "amount": 1,
+                        "isRecurring": true
+                    }
+                ]
+            },
+            {
+                "name": "Craft Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Gold", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Arrow",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "bow-3",
+        "name": "Bow Level 3",
+        "description": "The ultimate bow that allows the use of crafted arrows.",
+        "prototype": "bow-2",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Arrow",
+                        "amount": 1,
+                        "isRecurring": true
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Ghost",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Craft Bomb Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Arrow", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Bomb Arrow",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Craft Fire Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Arrow", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Fire Arrow",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "crossbow-1",
+        "name": "Crossbow Level 1",
+        "description": "A simple crossbow suitable for ranged attacks.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Arrow",
+                        "amount": 1,
+                        "isRecurring": true
+                    }
+                ]
+            },
+            {
+                "name": "Shoot Arrow",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 4
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 2 }
+            },
+            {
+                "name": "Shoot Fire Arrow",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Fire Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 4
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Burn",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 5 }
+            },
+            {
+                "name": "Shoot Ice Arrow",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Ice Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 4
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 5 }
+            },
+            {
+                "name": "Shoot Poison Arrow",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Poison Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 4
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Poison",
+                        "amount": 3
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 5 }
+            }
+        ]
+    },
+    {
+        "id": "crossbow-2",
+        "name": "Crossbow Level 2",
+        "description": "An enhanced crossbow that allows the use of crafted arrows.",
+        "prototype": "crossbow-1",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Arrow",
+                        "amount": 1,
+                        "isRecurring": true
+                    }
+                ]
+            },
+            {
+                "name": "Stake Down",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Arrow", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Steady",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Craft Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Gold", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Arrow",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Craft Ice Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Arrow", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Ice Arrow",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "crossbow-3",
+        "name": "Crossbow Level 3",
+        "description": "The ultimate crossbow that allows the use of crafted arrows.",
+        "prototype": "crossbow-2",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Arrow",
+                        "amount": 1,
+                        "isRecurring": true
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Ghost",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Hook Shot",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Arrow", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Melee", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 4
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Pull",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Craft Bomb Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Arrow", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Bomb Arrow",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Craft Fire Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Arrow", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Fire Arrow",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "cannon-1",
+        "name": "Cannon Level 1",
+        "description": "A simple cannon suitable for ranged attacks.",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Bomb",
+                        "amount": 1,
+                        "isRecurring": true
+                    }
+                ]
+            },
+            {
+                "name": "Shoot Cannonball",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Bomb", "amount": -1 },
+                    { "resource": "Energy", "amount": -3 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Push",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 5
+                    }
+                ],
+                "range": { "type": "Radius", "distance": 4 }
+            }
+        ]
+    },
+    {
+        "id": "cannon-2",
+        "name": "Cannon Level 2",
+        "description": "An enhanced cannon that allows the use of crafted bombs.",
+        "prototype": "cannon-1",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Bomb",
+                        "amount": 1,
+                        "isRecurring": true
+                    }
+                ]
+            },
+            {
+                "name": "Craft Bomb",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -3 },
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Gold", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Bomb",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "cannon-3",
+        "name": "Cannon Level 3",
+        "description": "The ultimate cannon that allows the use of crafted bombs.",
+        "prototype": "cannon-2",
+        "category": "Weapon",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Bomb",
+                        "amount": 2,
+                        "isRecurring": true
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Ghost",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Launch Landmine",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Landmine", "amount": -1 },
+                    { "resource": "Energy", "amount": -3 },
+                    { "resource": "Melee", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Utility",
+                        "target": "Area",
+                        "stat": "Landmine",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 4 }
+            },
+            {
+                "name": "Flashbang",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Bomb", "amount": -1 },
+                    { "resource": "Energy", "amount": -3 },
+                    { "resource": "Mana", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 5
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Push",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Confuse",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Radius", "distance": 4 }
+            }
+        ]
+    },
+    {
+        "id": "armor-1",
+        "name": "Armor Level 1",
+        "description": "A basic armor offering standard defense capabilities.",
+        "category": "Defense",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Block",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Steady",
+                        "amount": 1
+                    },
+                    {
+                        "action": "SetMax",
+                        "target": "Self",
+                        "stat": "Health",
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "name": "Defensive Stance",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Melee", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Block",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "armor-2",
+        "name": "Armor Level 2",
+        "description": "An advanced armor with enhanced defense capabilities.",
+        "prototype": "armor-1",
+        "category": "Defense",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "SetMax",
+                        "target": "Self",
+                        "stat": "Health",
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "name": "Harden",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Melee", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Steady",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Charge",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Mana", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Charge",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "armor-3",
+        "name": "Armor Level 3",
+        "description": "The ultimate armor with a perfect mix of defensive and offsensive capabilites.",
+        "prototype": "armor-2",
+        "category": "Defense",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "SetMax",
+                        "target": "Self",
+                        "stat": "Health",
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "name": "Haste",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [{ "resource": "Melee", "amount": -1 }],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Energy",
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "name": "Regenerate",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -10 },
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Potion", "amount": -1 },
+                    { "resource": "Elixir", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Regenerate",
+                        "amount": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fire-crystal-1",
+        "name": "Fire Crystal Level 1",
+        "description": "A basic fire crystal offering standard fire capabilities.",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Fireball",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -5 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll"
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Push",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 3 }
+            }
+        ]
+    },
+    {
+        "id": "fire-crystal-2",
+        "name": "Fire Crystal Level 2",
+        "description": "An advanced fire crystal with enhanced fire capabilities.",
+        "prototype": "fire-crystal-1",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Burn",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Ignite",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Burn",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Craft Fire Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Arrow", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Fire Arrow",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fire-crystal-3",
+        "name": "Fire Crystal Level 3",
+        "description": "The ultimate fire crystal with a perfect mix of fire and offsensive capabilites.",
+        "prototype": "fire-crystal-2",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Burn",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Fire Storm",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -2 },
+                    { "resource": "Energy", "amount": -6 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Burn",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll"
+                    }
+                ],
+                "range": { "type": "Radius", "distance": 4 }
+            },
+            {
+                "name": "Craft Landmine",
+                "behaviorType": "Craft",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Energy", "amount": -8 },
+                    { "resource": "Bomb", "amount": -1 },
+                    { "resource": "Gold", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Landmine",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ice-crystal-1",
+        "name": "Ice Crystal Level 1",
+        "description": "A basic ice crystal offering standard ice capabilities.",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Icicle",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 2
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 3 }
+            }
+        ]
+    },
+    {
+        "id": "ice-crystal-2",
+        "name": "Ice Crystal Level 2",
+        "description": "An advanced ice crystal with enhanced ice capabilities.",
+        "prototype": "ice-crystal-1",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Freeze",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Ice Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Arrow", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Ice Arrow",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ice-crystal-3",
+        "name": "Ice Crystal Level 3",
+        "description": "The ultimate ice crystal with a perfect mix of ice and offsensive capabilites.",
+        "prototype": "ice-crystal-2",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Blizzard",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -2 },
+                    { "resource": "Energy", "amount": -6 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Freeze",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll"
+                    }
+                ],
+                "range": { "type": "Radius", "distance": 4 }
+            },
+            {
+                "name": "Ice Wall",
+                "behaviorType": "Craft",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Energy", "amount": -8 },
+                    { "resource": "Mana", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Wall",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "light-crystal-1",
+        "name": "Light Crystal Level 1",
+        "description": "A basic light crystal offering standard light capabilities.",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Charge",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Heal",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -10 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Health",
+                        "amount": 5
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Potion",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "light-crystal-2",
+        "name": "Light Crystal Level 2",
+        "description": "An advanced light crystal with enhanced light capabilities.",
+        "prototype": "light-crystal-1",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Charge",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Reflect",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Regenerate",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Divine Blessing",
+                "behaviorType": "Craft",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -10 },
+                    { "resource": "Melee", "amount": -1 },
+                    { "resource": "Potion", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Elixir",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Charge",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Charge",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "light-crystal-3",
+        "name": "Light Crystal Level 3",
+        "description": "The ultimate light crystal with a perfect mix of light and offsensive capabilites.",
+        "prototype": "light-crystal-2",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Bonus",
+                "behaviorType": "Equip",
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Charge",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Reflect",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Regenerate",
+                        "amount": 2
+                    }
+                ]
+            },
+            {
+                "name": "Guardian Angel",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Mana", "amount": -2 },
+                    { "resource": "Energy", "amount": -4 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Reflect",
+                        "amount": 1
+                    }
+                ]
+            },
+            {
+                "name": "Regenerate",
+                "behaviorType": "Use",
+                "costs": [
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Energy", "amount": -10 },
+                    { "resource": "Potion", "amount": -1 },
+                    { "resource": "Elixir", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Regenerate",
+                        "amount": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "void-crystal-1",
+        "name": "Void Crystal Level 1",
+        "description": "A basic void crystal offering standard void capabilities.",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Equip",
+                "behaviorType": "Equip",
+                "costs": [{ "resource": "Energy", "amount": -1 }]
+            },
+            {
+                "name": "Vampire Bite",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -4 },
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Melee", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll"
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Vampire",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 1 }
+            }
+        ]
+    },
+    {
+        "id": "void-crystal-2",
+        "name": "Void Crystal Level 2",
+        "description": "An advanced void crystal with enhanced void capabilities.",
+        "prototype": "void-crystal-1",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Soul Drain",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -5 },
+                    { "resource": "Mana", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Debuff",
+                        "target": "Enemy",
+                        "stat": "Health",
+                        "amount": 1,
+                        "amountModifier": "Roll"
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Vampire",
+                        "amount": 1
+                    }
+                ],
+                "range": { "type": "Linear", "distance": 4 }
+            },
+            {
+                "name": "Void Jump",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Health", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Utility",
+                        "target": "Area",
+                        "description": "Pass through 1 void space"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "void-crystal-3",
+        "name": "Void Crystal Level 3",
+        "description": "The ultimate void crystal with a perfect mix of void and offsensive capabilites.",
+        "prototype": "void-crystal-2",
+        "category": "Magic",
+        "isEquippable": true,
+        "behaviors": [
+            {
+                "name": "Poison Cloud",
+                "behaviorType": "Use",
+                "requiredStates": ["PlayerTurn", "Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -10 },
+                    { "resource": "Mana", "amount": -2 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Ghost",
+                        "amount": 1
+                    },
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Poison",
+                        "amount": 3
+                    }
+                ],
+                "range": { "type": "Radius", "distance": 4 }
+            },
+            {
+                "name": "Craft Poison Arrow",
+                "behaviorType": "Craft",
+                "requiredStates": ["Equipped"],
+                "costs": [
+                    { "resource": "Energy", "amount": -2 },
+                    { "resource": "Mana", "amount": -1 },
+                    { "resource": "Arrow", "amount": -1 }
+                ],
+                "effects": [
+                    {
+                        "action": "Buff",
+                        "target": "Self",
+                        "stat": "Poison Arrow",
+                        "amount": 1
+                    }
+                ]
+            }
+        ]
+    }
+]

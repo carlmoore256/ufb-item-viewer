@@ -1,0 +1,218 @@
+{
+    "sword-1" : [
+        {
+            "name" : "sword1-full",
+            "url": "/images/power_sword1.png"
+        }
+    ],
+    "sword-2" : [
+        {
+            "name" : "sword2-full",
+            "url": "/images/power_sword2.png"
+        }
+    ],
+    "sword-3" : [
+        {
+            "name" : "sword3-full",
+            "url": "/images/power_sword3.png"
+        }
+    ],
+    "ax-1" : [
+        {
+            "name" : "ax1-full",
+            "url": "/images/power_ax1.png"
+        }
+    ],
+    "ax-2" : [
+        {
+            "name" : "ax2-full",
+            "url": "/images/power_ax2.png"
+        }
+    ],
+    "ax-3" : [
+        {
+            "name" : "ax3-full",
+            "url": "/images/power_ax3.png"
+        }
+    ],
+    "bow-1" : [
+        {
+            "name" : "bow1-full",
+            "url": "/images/power_bow1.png"
+        }
+    ],
+    "bow-2" : [
+        {
+            "name" : "bow2-full",
+            "url": "/images/power_bow2.png"
+        }
+    ],
+    "bow-3" : [
+        {
+            "name" : "bow3-full",
+            "url": "/images/power_bow3.png"
+        }
+    ],
+    "spear-1" : [
+        {
+            "name" : "spear1-full",
+            "url": "/images/power_spear1.png"
+        }
+    ],
+    "spear-2" : [
+        {
+            "name" : "spear2-full",
+            "url": "/images/power_spear2.png"
+        }
+    ],
+    "spear-3": [
+        {
+            "name" : "spear3-full",
+            "url": "/images/power_spear3.png"
+        }
+    ],
+    "shield-1" : [
+        {
+            "name" : "shield1-full",
+            "url": "/images/power_shield1.png"
+        }
+    ],
+    "shield-2" : [
+        {
+            "name" : "shield2-full",
+            "url": "/images/power_shield2.png"
+        }
+    ],
+    "shield-3" : [
+        {
+            "name" : "shield3-full",
+            "url": "/images/power_shield3.png"
+        }
+    ],
+    "crossbow-1" : [
+        {
+            "name" : "crossbow1-full",
+            "url": "/images/power_crossbow1.png"
+        }
+    ],
+    "crossbow-2" : [
+        {
+            "name" : "crossbow2-full",
+            "url": "/images/power_crossbow2.png"
+        }
+    ],
+    "crossbow-3" : [
+        {
+            "name" : "crossbow3-full",
+            "url": "/images/power_crossbow3.png"
+        }
+    ],
+    "cannon-1" : [
+        {
+            "name" : "cannon1-full",
+            "url": "/images/power_cannon1.png"
+        }
+    ],
+    "cannon-2" : [
+        {
+            "name" : "cannon2-full",
+            "url": "/images/power_cannon2.png"
+        }
+    ],
+    "cannon-3" : [
+        {
+            "name" : "cannon3-full",
+            "url": "/images/power_cannon3.png"
+        }
+    ],
+    "armor-1" : [
+        {
+            "name" : "armor1-full",
+            "url": "/images/power_armor1.png"
+        }
+    ],
+    "armor-2" : [
+        {
+            "name" : "armor2-full",
+            "url": "/images/power_armor2.png"
+        }
+    ],
+    "armor-3" : [
+        {
+            "name" : "armor3-full",
+            "url": "/images/power_armor3.png"
+        }
+    ],
+    "fire-crystal-1" : [
+        {
+            "name" : "fire-crystal1-full",
+            "url": "/images/power_fire1.png"
+        }
+    ],
+    "fire-crystal-2" : [
+        {
+            "name" : "fire-crystal2-full",
+            "url": "/images/power_fire2.png"
+        }
+    ],
+    "fire-crystal-3" : [
+        {
+            "name" : "fire-crystal3-full",
+            "url": "/images/power_fire3.png"
+        }
+    ],
+    "ice-crystal-1" : [
+        {
+            "name" : "ice-crystal1-full",
+            "url": "/images/power_ice1.png"
+        }
+    ],
+    "ice-crystal-2" : [
+        {
+            "name" : "ice-crystal2-full",
+            "url": "/images/power_ice2.png"
+        }
+    ],
+    "ice-crystal-3" : [
+        {
+            "name" : "ice-crystal3-full",
+            "url": "/images/power_ice3.png"
+        }
+    ],
+    "light-crystal-1" : [
+        {
+            "name" : "light-crystal1-full",
+            "url": "/images/power_light1.png"
+        }
+    ],
+    "light-crystal-2" : [
+        {
+            "name" : "light-crystal2-full",
+            "url": "/images/power_light2.png"
+        }
+    ],
+    "light-crystal-3" : [
+        {
+            "name" : "light-crystal3-full",
+            "url": "/images/power_light3.png"
+        }
+    ],
+    "void-crystal-1" : [
+        {
+            "name" : "void-crystal1-full",
+            "url": "/images/power_void1.png"
+        }
+    ],
+    "void-crystal-2" : [
+        {
+            "name" : "void-crystal2-full",
+            "url": "/images/power_void2.png"
+        }
+    ],
+    "void-crystal-3" : [
+        {
+            "name" : "void-crystal3-full",
+            "url": "/images/power_void3.png"
+        }
+    ]
+}
